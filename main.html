@@ -10,6 +10,25 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			if (!arr || arr.length < 2) {
+    return -Infinity;
+  }
+
+  let max = -Infinity;
+  let secondMax = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    const val = Number(arr[i]); // convert prompt input to number
+
+    if (val > max) {
+      secondMax = max;
+      max = val;
+    } else if (val < max && val > secondMax) {
+      secondMax = val;
+    }
+  }
+
+  return secondMax;
 			
 		}
 
